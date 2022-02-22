@@ -1,0 +1,30 @@
+defaults:
+  # Train Script
+  logdir: /dev/null
+  num_train_epochs: 100
+  stop:
+    accuracy_mean: 0.98
+    latest_target_num: 10
+    reward_mean: 0.8
+  demo: "CartPole-v0_human.pkl"
+  seed: 1234  # random seed
+  agent_replay_capacity: 1000
+  demo_replay_capacity: 1000
+  save_weights_iter: 5 # save weights every train iter
+  num_updates: 10000  # total training iterations
+  log_step: 100  # log frequency
+  play: True  # render after training
+  # hyper-parameters
+  batch_size: 32  # batch size
+  num_generator_epochs: 3  # number of epochs for training ppo policy
+  num_discriminator_epochs: 3  # number of epochs for training discriminator
+  num_rollout_steps: 128
+  num_steps: 128  # horizon
+  num_units: 64  # fc units
+  gamma: 0.99  # discount rate
+  lambda_: 0.95  # gae discount rate
+  clip: 0.2  # clipping c
+  vf_coef: 0.5  # coefficient of value loss
+  ent_coef: 0.01  # coefficient of entropy
+  learning_rate: 2.5e-4  # learning rate
+  gradient_clip: 0.5  # gradinet clipping
